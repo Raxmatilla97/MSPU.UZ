@@ -1,0 +1,74 @@
+[viewBag]
+
+[builderList]
+modelClass = "Indikator\News\Models\Posts"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+recordsPerPage = 3
+pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "desc"
+==
+{#{% set posts2ww = newsPosts2ww.posts %}#}
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+
+
+<section class="blog-area" style="padding-top: 100px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-9">
+                    <div class="section-title-2 text-center">
+                        <h2 class="title"><u>Yangilik va E'lonlari</u></h2>
+                        <span class="line"></span>
+                        <p>Universitetda bo'layotgan qizg'in yangiliklar va muhim e'lonlarni kuzatib boring</p>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-wrapper">
+                <div class="row-wrapper blog-active slick-initialized slick-slider">
+                
+                    <div class="slick-list draggable">                    
+                    <div class="slick-track" style="opacity: 1; width: 1200px; transform: translate3d(0px, 0px, 0px);">
+                    
+                      {% for post in records %}
+                    <div class="custom-col slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 400px;">
+                        <div class="single-blog mt-30">
+                            <div class="blog-image">
+                                <a href="{{ 'yangiliklar-va-elonlar' }}/{{ post.slug }}" tabindex="0">
+                                   {% if post.image %}  <img src="{{ post.image|media}}" width="370" height="320" alt="{{ post.title }}">{% endif %}
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <ul class="meta">
+                                    <li>{{ post.published_at|date('Y-m-d') }}</li>
+                                    <li>{{"Chop etdi"|_}}: {{ post.user.getFullNameAttribute }}</li>
+                                    <li>{{ post.category.name }}</li>
+                                </ul>
+                                <h4 class="blog-title"><a href="{{ 'yangiliklar-va-elonlar' }}/{{ post.slug }}" tabindex="0">{{ post.title }}</a></h4>
+                                <a href="{{ 'yangiliklar-va-elonlar' }}/{{ post.slug }}" class="more" tabindex="0">{{"Ko'proq o'qish"|_}} <i class="fal fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     {% else %}
+                    <span class="post-nodata">{{ noPostsMessage }}</span>
+                    {% endfor %}
+                       
+                    
+                    </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>

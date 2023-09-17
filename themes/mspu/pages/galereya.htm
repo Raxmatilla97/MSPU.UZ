@@ -1,0 +1,40 @@
+title = "Galereya"
+url = "/galereya"
+layout = "yangiliklar_uchun"
+is_hidden = 0
+
+[Sqwk\Gallery\Components\Gallery Gallery2]
+idGallery = "universitet"
+slug = "{{ :slug }}"
+maxDimension = 640
+==
+<section class="page-banner">
+        <div class="page-banner-bg bg_cover" style="background-image: url(assets/images/page-banner.webp);">
+            <div class="container">
+                <div class="banner-content text-center">
+                    <h2 class="title">{{"Galereya"|_}}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div class="gallery-page">
+        <div class="container">
+            <div class="row grid-masonry" style="position: relative; height: 1261.86px;">
+                
+            {% for image in Gallery2.gallery.images %}
+                <div class="col-lg-4 col-sm-6 grid-item" style="position: absolute; left: 0%; top: 0px;">
+                    <div class="single-gallery mt-30">
+                        <a class="image-popup" href="{{image.path|resize(Gallery2.property('maxDimension'))}}">
+                            <img src="{{image.path|resize(Gallery2.property('maxDimension'))}}" alt="{{image.title}}">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+   
+               
+                
+            </div>
+        
+        </div>
+    </div>

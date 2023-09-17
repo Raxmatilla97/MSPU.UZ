@@ -1,0 +1,66 @@
+title = "Yangilik va E'lonlar ro'yxati"
+url = "/yangilik-va-elonlar-royxati/:page?/:cate?"
+layout = "yangiliklar_uchun"
+is_hidden = 0
+
+[newsPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 9
+noPostsMessage = "Отсутсвие постов"
+sortOrder = "published_at desc"
+postFeatured = 0
+categoryFilter = "{{ :cate }}"
+postPage = "yangiliklar-va-elonlar"
+categoryPage = 404
+==
+{% set posts = newsPosts.posts %}
+
+
+     <section class="page-banner">
+        <div class="page-banner-bg bg_cover" style="background-image: url({{'assets/images/page-banner.webp'|theme}});">
+            <div class="container">
+                <div class="banner-content text-center">
+                    <h2 class="title">{{"Yangiliklar va E'lonlar ro'yxati"|_}}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-page" style="padding-top: 50px;">
+        <div class="container">
+            <div class="row">
+                
+                 {% for post in posts %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog mt-30">
+                        <div class="blog-image">
+                            <a href="{{ post.url }}">
+                                   {% if post.image %}  <img src="{{ post.image|media}}" width="370" height="320" alt="{{ post.title }}">{% endif %}
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <ul class="meta">
+                                <li>{{ post.published_at|date('Y-m-d') }}</li>
+                                <li>{{"Chop etdi"|_}}: {{ post.user.getFullNameAttribute }}</li>
+                                <li><a href="{{post.category.url}}">{{ post.category.name }}</a></li>
+                            </ul>
+                            <h4 class="blog-title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                            <a href="{{ post.url }}" class="more">Read more <i class="fal fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <span class="post-nodata">{{ noPostsMessage }}</span>
+                {% endfor %}
+                
+               
+            </div>
+            <ul class="pagination-items text-center">
+                <li><a class="active" href="blog.html#">01</a></li>
+                <li><a href="blog.html#">02</a></li>
+                <li><a href="blog.html#">03</a></li>
+                <li><a href="blog.html#">04</a></li>
+                <li><a href="blog.html#">05</a></li>
+            </ul>
+        </div>
+    </section>

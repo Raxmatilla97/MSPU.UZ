@@ -1,0 +1,113 @@
+[viewBag]
+==
+<header class="header-area">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-wrapper d-flex flex-wrap justify-content-sm-between">
+                    <div class="header-top-left mt-10">
+                        <ul class="header-meta">
+                            <li><a href="mailto://infoedumate@mspu.uz">infoedumate@mspu.uz</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-top-right mt-10">
+                        <div class="header-link">
+                            
+                            {#<a class="login" href="#">O'zbek tili</a>
+                            <a class="register" href="#">Rus tili</a>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="navigation" class="navigation navigation-landscape">
+            <div class="container position-relative">
+                <div class="row align-items-center">
+                    <div class="col-lg-2">
+                        <div class="header-logo">
+                            <a href="{{'/'}}"><img src="{{'/storage/app/media/sayt_sozlamlari_uchun/mspu_logo2.png'}}" width="135" height="88" alt="Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 position-static">
+                        <div class="nav-toggle"></div>
+                        <nav class="nav-menus-wrapper">
+                            <ul class="nav-menu">
+                                <li>
+                                    <a class="active" href="{{'/yangilik-va-elonlar-royxati'}}">{{"Xabarlar"|_}}</a>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        <li><a href="{{'/yangilik-va-elonlar-royxati/1/yangiliklar'}}">{{"Yangiliklar"|_}}</a></li>
+                                        <li><a href="{{'/yangilik-va-elonlar-royxati/1/elonlar'}}">{{"E'lonlar"|_}}</a></li>
+                                      
+                                    </ul>
+                                </li>
+                               <!--  <li>
+                                   <a href="index-3.html#">Yo'nailshlar</a>
+                                   <ul class="nav-dropdown nav-submenu">
+                                       <li>
+                                           <a href="index-3.html#">Courses Grid</a>
+                                           <ul class="nav-dropdown nav-submenu">
+                                               <li><a href="our-courses.html">Courses 01</a></li>
+                                               <li><a href="our-courses-2.html">Courses 02</a></li>
+                                               <li><a href="our-courses-3.html">Courses 03</a></li>
+                                               <li><a href="our-courses-left-sidebar.html">Courses Left Sidebar</a></li>
+                                               <li><a href="our-courses-right-sidebar.html">Courses Right Sidebar</a></li>
+                                           </ul>
+                                       </li>  
+                                       <li>
+                                           <a href="index-3.html#">Courses</a>
+                                           <ul class="nav-dropdown nav-submenu">
+                                               <li><a href="our-courses-list.html">Courses List</a></li>
+                                               <li><a href="our-courses-list-left-sidebar.html">Courses List Left Sidebar </a></li>
+                                               <li><a href="our-courses-list-right-sidebar.html">Courses List Right Sidebar</a></li>                                                    
+                                           </ul>
+                                       </li>                                            
+                                       <li><a href="courses-details.html">Courses Details</a></li>
+                                   </ul>
+                               </li> -->
+                                <li>
+                                    <a href="{{'/universitet-haqida'}}">{{"Universitet"|_}}</a>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        <li><a href="{{'/universitet-haqida'}}">{{"Universitet haqida"|_}}</a></li>
+                                        <li><a href="{{'/raxbariyat'}}">{{"Raxbariyat"|_}}</a></li>                                        
+                                        <li><a href="{{'/oqituvchilar'}}">{{"O'qituvchilar"|_}}</a></li>
+                                        <li><a href="{{'/kutubxona'}}">{{"Kutubxona"|_}}</a></li>
+                                        <li><a href="{{'/kop-beriladigan-savollar'}}">{{"Ko'p beriladigan savollar"|_}}</a></li>
+                                       
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{'/yonalishlar'}}">{{"Yo'nalishlar"|_}}</a>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        <li><a href="{{'/yonalishlar/talim-menejmenti'}}">{{"Ta’lim menejmenti"|_}}</a></li>
+                                        <li><a href="{{'/yonalishlar/pedagogika-va-psixologiya'}}">{{"Pedagogika va Psixologiya"|_}}</a></li>
+                                        <li><a href="{{'/yonalishlar/boshlangich-talim'}}">{{"Boshlang'ich ta'lim"|_}}</a></li>
+                                        <li><a href="{{'/yonalishlar/maktabgacha-talim'}}">{{"Maktabgacha ta'lim"|_}}</a></li>
+                                        <li><a href="{{'/yonalishlar/defektologiya'}}">{{"Defektologiya"|_}}</a></li>
+                                   
+                                    </ul>
+                                </li>
+                                <li><a href="{{'/yangilik-va-elonlar-royxati/1/qabul-2022'}}">{{"Qabul 2022"|_}}</a></li>
+                                <li>
+                                    <a href="{{'/talabalar'}}">{{"Talabalar"|_}}</a>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        <li><a href="{{'/talabalar/dars-jadvali'}}">{{"Dars jadvali"|_}}</a></li>
+                                        <li><a href="{{'/yangilik-va-elonlar-royxati/1/talabalarga'}}">{{"Muxum habarlar"|_}}</a></li>  
+                                    </ul>
+                                </li>
+                              
+                                <li><a href="{{'/qayta-loqa'}}">{{"Bog'lanish"|_}}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                  {#  <div class="col-lg-2 position-static">
+                        <div class="header-search">
+                            <form action="index-3.html#">
+                                <input type="text" placeholder="Qidirish">
+                                <button><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>#}
+                </div>
+            </div>
+        </div>
+    </header>

@@ -1,0 +1,6 @@
+plugin:
+    name: 'raxmatillafayziyev.mspu::lang.plugin.name'
+    description: 'raxmatillafayziyev.mspu::lang.plugin.description'
+    author: 'Raxmatilla Fayziyev'
+    icon: oc-icon-bank
+    homepage: ''
